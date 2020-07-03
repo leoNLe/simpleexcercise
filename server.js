@@ -17,9 +17,13 @@ require('./routes/api-routes')(app);
 
 //Make db is logged into before starting server
 mongoose
-  .connect('mongodb://localhost/workoutDB', { useNewUrlParser: true }, () => {
-    console.log('Connected to DB');
-  })
+  .connect(
+    process.env.MONGODB_URI || 'mongodb://localhost/workoutDB',
+    { useNewUrlParser: true },
+    () => {
+      console.log('Connected to DB');
+    }
+  )
   .then(() =>
     app.listen(PORT, () => {
       console.log(`listening on PORT ${PORT}`);
