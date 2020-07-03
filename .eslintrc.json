@@ -1,0 +1,17 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2020": true,
+    "node": true
+  },
+  "plugins": ["prettier"],
+  "extends": ["prettier"],
+  "parserOptions": {
+    "ecmaVersion": 11
+  },
+  "rules": {
+    "comma-dangle": ["error", "never"],
+    "prettier/prettier": "error"
+  }
+}
